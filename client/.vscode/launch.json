@@ -3,11 +3,25 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "ng serve",
-      "type": "pwa-chrome",
+      "name": "Launch Chrome against localhost",
+      "port": 4200,
       "request": "launch",
       "preLaunchTask": "npm: start",
-      "url": "http://localhost:4200/"
+      "type": "chrome",
+      "url": "https://localhost:4200/",
+      "webRoot": "${workspaceFolder}",
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+    ]
+    },
+
+    {
+      "name": "ng serve",
+      "type": "chrome",
+      "request": "launch",
+      "preLaunchTask": "npm: start",
+      "url": "https://localhost:4200/"
     },
     {
       "name": "ng test",
