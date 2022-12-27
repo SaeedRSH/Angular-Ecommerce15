@@ -1,6 +1,7 @@
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <section class="col-3">
+            <ng-container *ngIf="types && brands">
             <h5 class="text-warning ml-3">Sort</h5>
             <select class="custom-select mb-3" (change)="onSortSelected($event.target.value)">
                 <option *ngFor="let sort of sortOptions"
@@ -22,6 +23,7 @@
                     {{type.name}}
                   </li>
               </ul>
+            </ng-container>
         </section>
         <section class="col-9">
             <div class="d-flex justify-content-between align-items-center pb-2">
